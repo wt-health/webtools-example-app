@@ -10,7 +10,7 @@
         "esModuleInterop": true,
         "allowJs": true,
         "lib": ["esnext", "dom"],
-        "types": ["@types/node", "@types/ziggy-js"],
+        "types": ["@types/ziggy-js"],
         "paths": {
             "@/*": ["./resources/js/*"]
         },
@@ -19,8 +19,8 @@
     "typeRoots": ["./node_modules/@types", "resources/js/types"],
     "include": [
         "resources/js/**/*.ts",
+        "resources/js/**/*.tsx",
         "resources/js/**/*.d.ts",
-        "resources/js/**/*.vue"
     ],
     "exclude": ["node_modules", "public"]
 }

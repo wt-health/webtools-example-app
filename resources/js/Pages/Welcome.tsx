@@ -1,6 +1,6 @@
 import {Link, Head} from '@inertiajs/react';
 import route from "ziggy-js";
-import {AuthProps} from "../Types/authProps";
+import {AuthProps} from "@/Types/authProps";
 import React from "react";
 
 export default function Welcome(props: AuthProps) {
@@ -258,10 +258,6 @@ export default function Welcome(props: AuthProps) {
                                     Sponsor
                                 </a>
                             </div>
-                        </div>
-
-                        <div className="ml-4 text-center text-sm text-gray-500 sm:text-right sm:ml-0">
-                            Laravel v{props.laravelVersion} (PHP v{props.phpVersion})
                         </div>
                     </div>
                 </div>
