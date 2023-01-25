@@ -1,17 +1,15 @@
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import {Head, Link} from '@inertiajs/react';
-import {AuthProps} from "../../Types/authProps";
 import route from "ziggy-js";
-import {Patient} from "../../Types/Patient";
+import {Patient} from "@/Types/Patient";
 
 interface PatientShowProps {
     patient: Patient
 }
 
-export default function Index(props: AuthProps & PatientShowProps) {
+export default function Index(props:  PatientShowProps) {
     return (
         <AuthenticatedLayout
-            auth={props.auth}
             header={<h2 className="font-semibold text-xl text-gray-800 leading-tight">Patients</h2>}
         >
             <Head title="Patient"/>

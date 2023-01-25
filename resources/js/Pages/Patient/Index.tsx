@@ -1,18 +1,16 @@
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import {Head, Link} from '@inertiajs/react';
-import {AuthProps} from "../../Types/authProps";
 import route from "ziggy-js";
-import {Resource} from "../../Types/Resource";
-import {Patient} from "../../Types/Patient";
+import {Resource} from "@/Types/Resource";
+import {Patient} from "@/Types/Patient";
 
 interface PatientIndexProps {
     patients: Array<Resource<Patient>>
 }
 
-export default function Index(props: AuthProps & PatientIndexProps) {
+export default function Index(props: PatientIndexProps) {
     return (
         <AuthenticatedLayout
-            auth={props.auth}
             header={<h2 className="font-semibold text-xl text-gray-800 leading-tight">Patients</h2>}
         >
             <Head title="Patients"/>
@@ -40,7 +38,7 @@ export default function Index(props: AuthProps & PatientIndexProps) {
                             </thead>
                             <tbody>
                             {props.patients.map(patient => {
-                                return <tr className="bg-white border-b" id={patient.resource.id} >
+                                return <tr className="bg-white border-b" id={patient.resource.id}>
                                     <th scope="row"
                                         className="px-6 py-4 font-medium whitespace-nowrap">
                                         {patient.resource.id}

@@ -1,6 +1,12 @@
 import { Link } from '@inertiajs/react';
+import React from "react";
 
-export default function NavLink({ href, active, children }) {
+interface  NavLinkProps {
+    href: string,
+    active: boolean,
+    children?: React.ReactNode;
+}
+export default function NavLink({ href, active, children }: NavLinkProps) {
     return (
         <Link
             href={href}

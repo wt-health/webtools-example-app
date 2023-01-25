@@ -1,4 +1,13 @@
-export default function PrimaryButton({ type = 'submit', className = '', processing, children, onClick }) {
+import React from "react";
+
+interface PrimaryButtonProps {
+    type?: 'submit' | 'reset' | 'button' | undefined;
+    className?: string;
+    processing?: boolean | undefined;
+    onClick?: any;
+    children?: React.ReactNode;
+}
+export default function PrimaryButton({ type = 'submit', className = '', processing, children, onClick }: PrimaryButtonProps) {
     return (
         <button
             type={type}
