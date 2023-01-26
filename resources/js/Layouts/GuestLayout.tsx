@@ -7,7 +7,7 @@ interface GuestProps {
     children?: React.ReactNode;
 }
 
-export default function Guest({children}: GuestProps) {
+const Guest = ({children}: GuestProps) => {
     return (
         <div className="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
             <div>
@@ -22,3 +22,5 @@ export default function Guest({children}: GuestProps) {
         </div>
     );
 }
+
+export default Guest;

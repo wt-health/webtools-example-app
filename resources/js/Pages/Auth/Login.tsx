@@ -1,4 +1,4 @@
-import {useEffect} from 'react';
+import React, {useEffect} from 'react';
 import GuestLayout from '@/Layouts/GuestLayout';
 import InputError from '@/Components/InputError';
 import InputLabel from '@/Components/InputLabel';
@@ -7,7 +7,7 @@ import TextInput from '@/Components/TextInput';
 import {Head, useForm} from '@inertiajs/react';
 import route from "ziggy-js";
 
-export default function Login({status}: any) {
+const Login = ({status}: { status: string }) => {
     const {data, setData, post, processing, errors, reset} = useForm({
         email: '',
         password: '',
@@ -19,11 +19,13 @@ export default function Login({status}: any) {
         };
     }, []);
 
-    const onHandleChange = (event: any) => {
-        setData(event.target.name, event.target.type === 'checkbox' ? event.target.checked : event.target.value);
+    const onHandleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        if (event.target.name === 'email' || event.target.name === 'password') {
+            setData(event.target.name, event.target.type === 'checkbox' ? String(event.target.checked) : event.target.value);
+        }
     };
 
-    const submit = (e: any) => {
+    const submit = (e: React.FormEvent) => {
         e.preventDefault();
 
         post(route('login'));
@@ -77,3 +79,5 @@ export default function Login({status}: any) {
         </GuestLayout>
     );
 }
+
+export default Login;

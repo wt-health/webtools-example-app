@@ -1,4 +1,5 @@
-import React, {forwardRef} from 'react';
+import React, {ChangeEventHandler} from 'react';
+import classNames from "classnames";
 
 interface TextInputProps {
     type?: string;
@@ -7,14 +8,22 @@ interface TextInputProps {
     value?: string;
     autoComplete?: string;
     required?: boolean;
-    handleChange?: any;
+    handleChange?: ChangeEventHandler | undefined;
     className?: string;
     children?: React.ReactNode;
 }
 
-export default forwardRef(function TextInput(
-    {type = 'text', name, id, value, className, autoComplete, required, handleChange}: TextInputProps,
-) {
+const TextInput = (
+    {type = 'text', name, id, value, className = '', autoComplete, required, handleChange}
+        :
+        TextInputProps
+) => {
+
+    const inputClass = classNames({
+        'block font-medium text-sm text-gray-700 ': true,
+        [`${className}`]: true
+    });
+
 
     return (
         <div className="flex flex-col items-start">
@@ -23,14 +32,13 @@ export default forwardRef(function TextInput(
                 name={name}
                 id={id}
                 value={value}
-                className={
-                    `border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm ` +
-                    className
-                }
+                className={inputClass}
                 autoComplete={autoComplete}
                 required={required}
                 onChange={(e) => handleChange(e)}
             />
         </div>
     );
-});
+};
+
+export default TextInput;

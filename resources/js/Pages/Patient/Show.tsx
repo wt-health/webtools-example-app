@@ -7,7 +7,7 @@ interface PatientShowProps {
     patient: Patient
 }
 
-export default function Index(props:  PatientShowProps) {
+const Index = (props: PatientShowProps) => {
     return (
         <AuthenticatedLayout
             header={<h2 className="font-semibold text-xl text-gray-800 leading-tight">Patients</h2>}
@@ -19,7 +19,7 @@ export default function Index(props:  PatientShowProps) {
                     <Link href={route('patient.index')}>Back</Link>
                     <div className="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
                         <div>
-                        ID: {props.patient.id}
+                            ID: {props.patient.id}
                         </div>
                         <div>
                             First Name: {props.patient.name[0].given}
@@ -34,3 +34,5 @@ export default function Index(props:  PatientShowProps) {
         </AuthenticatedLayout>
     );
 }
+
+export default Index;

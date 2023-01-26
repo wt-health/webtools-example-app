@@ -8,7 +8,7 @@ interface PatientIndexProps {
     patients: Array<Resource<Patient>>
 }
 
-export default function Index(props: PatientIndexProps) {
+const Index = (props: PatientIndexProps) => {
     return (
         <AuthenticatedLayout
             header={<h2 className="font-semibold text-xl text-gray-800 leading-tight">Patients</h2>}
@@ -62,3 +62,5 @@ export default function Index(props: PatientIndexProps) {
         </AuthenticatedLayout>
     );
 }
+
+export default Index;

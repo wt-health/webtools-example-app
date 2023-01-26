@@ -10,7 +10,7 @@ interface AuthenticatedProps {
     children?: React.ReactNode;
 }
 
-export default function Authenticated({header, children}: AuthenticatedProps) {
+const Authenticated = ({header, children}: AuthenticatedProps) => {
     const [showingNavigationDropdown, setShowingNavigationDropdown] = useState(false);
 
     return (
@@ -86,3 +86,5 @@ export default function Authenticated({header, children}: AuthenticatedProps) {
         </div>
     );
 }
+
+export default Authenticated;
