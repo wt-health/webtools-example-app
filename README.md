@@ -15,16 +15,14 @@ This currently allows a page of patients to be shown to a user as well as clicki
 
 ### Getting it running
 
-1. `docker run --rm --interactive --tty \
-   --volume $PWD:/app \
-   --user $(id -u):$(id -g) \
-   composer install` to install the dependencies
-2. `vendor/bin/sail artisan key:generate` to generate the application key
-3. `vendor/bin/sail up` to start up the application (NOTE: This could take a while to build the first time)
-4. `/vendor/bin/sail npm install` to install npm dependencies
-5. `/vendor/bin/sail npm run dev` to run the React build process
-6. `/vendor/bin/sail artisan migrate --seed` to run the React build process
-7. Login to the application at `http://localhost/login` using the email and password in the DatabaseSeeder.php
+1. `docker run --rm --interactive --tty --volume $PWD:/app --user $(id -u):$(id -g) composer install` to install the dependencies
+2. Copy `.env.example` to `.env
+3. `vendor/bin/sail artisan key:generate` to generate the application key
+4. `vendor/bin/sail up` to start up the application (NOTE: This could take a while to build the first time)
+5. `vendor/bin/sail npm install` to install npm dependencies
+6. `vendor/bin/sail npm run dev` to run the React build process
+7. `vendor/bin/sail artisan migrate --seed` to run the React build process
+8. Login to the application at `http://localhost/login` using the email and password in the DatabaseSeeder.php
 
 ### Task
 
