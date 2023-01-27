@@ -9,7 +9,7 @@ This currently allows a page of patients to be shown to a user as well as clicki
 ### Repo setup
 
 1. Clone this repo
-2. Create a new private repo and push to GitHub
+2. Create a new repo and push to GitHub
 3. Make changes as required below
 4. Share with GitHub users `karl-d`, `Matt-Web` and `kibbonz`
 
