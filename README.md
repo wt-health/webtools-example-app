@@ -2,9 +2,19 @@
 
 ## Background
 
-This is a small laravel/inertia/react application that allows pulling of a list of patients from a public FHIR API.
+This is a small laravel/inertia/react application.
 
-This currently allows a page of patients to be shown to a user as well as clicking into an individual patient.
+It pulls a list of patients from a public FHIR API then displays them and allows for the drilldown to an individual patinet.
+
+### Task
+
+Please extend the application to allow a user to do the following
+
+- Search for by name
+- Add pagination to the table to allow a user to navigate through the pages
+
+
+## Setup
 
 ### Repo setup
 
@@ -14,6 +24,8 @@ This currently allows a page of patients to be shown to a user as well as clicki
 4. Share with GitHub users `karl-d`, `Matt-Web` and `kibbonz`
 
 ### Getting it running
+
+There are a couple of options to get it running:
 
 #### Laravel Sail
 
@@ -50,12 +62,7 @@ using the email and password in the `DatabaseSeeder.php`
 You could use any other PHP stack that you are familiar with like 
 [Valet](https://laravel.com/docs/9.x/valet) or [Homestead](https://laravel.com/docs/9.x/homestead)
 
-### Task
 
-Please extend the application to allow a user to do the following
-
-- Search for by name
-- Add pagination to the table to allow a user to navigate through the pages
 
 ## Useful Links
 
